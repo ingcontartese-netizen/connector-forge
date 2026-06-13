@@ -15,7 +15,7 @@ git init
 git config user.name  "Giuseppe"
 git config user.email "ing.contartese@gmail.com"
 git add -A
-git -c commit.gpgsign=false commit -m "connector-forge: initial public release" || echo "(no new commit / already committed)"
+git -c commit.gpgsign=false commit -m "fix: complete README (full ValuAziende row + body, MCP+CLI, credits, license)" || echo "(no new commit / already committed)"
 git branch -M main
 git remote remove origin 2>/dev/null || true
 git remote add origin https://github.com/ingcontartese-netizen/connector-forge.git
