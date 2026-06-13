@@ -1,0 +1,32 @@
+connector-forge — push to GitHub (run by Giuseppe, credentials stay with you)
+============================================================================
+
+Repo (already created, public): https://github.com/ingcontartese-netizen/connector-forge
+
+STEP 1 — open Git Bash (or Windows Terminal) and paste:
+
+  cd "/c/Users/conta/Documents/Per skill CLI/REAL_CASES/VALUAZIENDE_CONNECTOR_FORGE_LAB/connector-forge-pub"
+  git init
+  git add -A
+  git commit -m "connector-forge: initial public release"
+  git branch -M main
+  git remote add origin https://github.com/ingcontartese-netizen/connector-forge.git
+  git push -u origin main
+
+  (If using Windows CMD instead of Git Bash, replace the first line with:
+   cd "C:\Users\conta\Documents\Per skill CLI\REAL_CASES\VALUAZIENDE_CONNECTOR_FORGE_LAB\connector-forge-pub" )
+
+STEP 2 — when git asks to authenticate, YOU enter it (browser sign-in or a
+Personal Access Token). Claude never handles your credentials.
+
+If git complains about identity, set it once:
+  git config --global user.name  "Giuseppe"
+  git config --global user.email "your-github-email@example.com"
+
+After the push, refresh https://github.com/ingcontartese-netizen/connector-forge
+— the README hero, badges, and all 137 files should be there.
+
+Notes:
+- Everything is already audited (no secrets, no proprietary method, no user data).
+- 137 files: SKILL.md + 58 references + templates + host packs + agents + scripts
+  + README/LICENSE/NOTICE/.gitignore + proposed-references/ (13 DRAFT + README).

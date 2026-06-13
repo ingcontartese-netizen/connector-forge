@@ -1,0 +1,56 @@
+adapter_id: "STABLE_NAME"
+app_target: "APP_NAME"
+app_version_min: "VERSION"
+app_family: "cad_bim|dcc_3d|saas|web_app|custom_fastapi|other"
+
+surface:
+  type: "api|sdk|cli|plugin|addon|file_workflow|bridge|mcp|other"
+  official_or_authorized: true
+  source_registry_ref: "SOURCE_ID"
+
+runtime:
+  location: "local_process|embedded_plugin|site_bridge|remote_service"
+  requires_running_app: false
+  requires_active_document: false
+
+session:
+  can_detect_app_running: false
+  can_list_open_documents: false
+  can_get_active_context: false
+  can_detect_lock_state: false
+
+identity:
+  object_id_kind: "guid|handle|uuid|database_id|slug|other"
+  stable_ids_required: true
+
+capabilities:
+  read: []
+  export: []
+  write_prepare: []
+  write_commit: []
+  sync: []
+
+safety:
+  dry_run_required: true
+  idempotency_key_supported: false
+  destructive_requires_approval: true
+  rollback_supported: false
+
+health:
+  ping: true
+  version: true
+  auth_status: true
+  bridge_status: false
+
+errors:
+  - validation_error
+  - auth_error
+  - permission_denied
+  - not_found
+  - rate_limited
+  - timeout
+  - lock_conflict
+  - stale_document
+  - unsupported_operation
+  - unsafe_operation
+  - upstream_failure

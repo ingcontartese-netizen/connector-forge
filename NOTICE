@@ -1,0 +1,19 @@
+connector-forge
+Copyright 2026 Giuseppe (connector-forge author)
+
+This product includes a generalist agent skill for building verified
+connectors (MCP / CLI / API / file / browser / desktop) for any application
+surface.
+
+The skill was distilled from field work on three real benches:
+  - ValuAziende OneMaster Bridge (FastAPI/React, native governance)
+  - Archicad 29 (desktop CAD via add-on)
+  - Oracle Primavera P6 (enterprise scheduling, standalone SQLite)
+
+The benches appear in this repository only as sanitized case studies.
+No proprietary method, no scoring formulas or thresholds, no user data,
+no credentials, and no private portfolio data are included.
+
+Authored collaboratively by Giuseppe (operator / domain author) with the
+assistance of AI agents (Claude, OpenAI Codex, and others) acting under the
+operator's command and verification.

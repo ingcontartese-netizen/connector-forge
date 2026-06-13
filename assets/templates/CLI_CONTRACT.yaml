@@ -1,0 +1,78 @@
+cli_name: "TOOL_NAME"
+version: "0.1.0"
+schema_version: "2026-05-22"
+
+commands:
+  doctor:
+    risk: "read"
+    output: "json|text"
+  auth_status:
+    risk: "read"
+  search:
+    risk: "read"
+    flags: ["--query", "--limit", "--format"]
+  get:
+    risk: "read"
+    flags: ["--id", "--format"]
+  export:
+    risk: "safe"
+    flags: ["--id", "--format", "--output"]
+  prepare:
+    risk: "write-safe"
+    flags: ["--patch", "--dry-run", "--idempotency-key"]
+    dry_run_output: "json_diff"
+  commit:
+    risk: "write"
+    flags: ["--plan-id", "--confirm"]
+  propose:
+    risk: "write-governed"
+    flags: ["--payload", "--dry-run", "--idempotency-key"]
+  approve:
+    risk: "write-governed"
+    flags: ["--proposal-id", "--confirm"]
+
+output:
+  default_format: "text"
+  machine_format: "json"
+  stdout: "data only"
+  stderr: "logs and diagnostics"
+  no_color_flag: true
+
+exit_codes:
+  0: "success"
+  2: "usage_error"
+  3: "auth_error"
+  4: "permission_denied"
+  5: "not_found"
+  6: "conflict"
+  7: "rate_limited_or_remote_unavailable"
+  8: "validation_error"
+  10: "unsafe_operation_blocked"
+  70: "internal_error"
+
+safety:
+  supports_dry_run: true
+  dry_run_format:
+    required_fields: ["plan_id", "would_change", "risk", "requires_approval", "objects"]
+    fail_closed_exit_code: 10
+  write_governed:
+    direct_write_forbidden: true
+    requires: ["proposal", "human_approval", "audit_trail"]
+  destructive_requires_confirm: true
+  idempotency_key: "recommended"
+  timeout_flag: true
+  limit_flag: true
+  paging: "cursor"
+
+parity:
+  target_carriers: ["cli"]
+  mcp_twin_required: false
+  side_effect_class_must_match: true
+  readback_contract_required_for_writes: true
+  status: "design_target_until_tested"
+
+evidence_provenance:
+  source_bench: "ValuAziende OneMaster Draft, 2026-06-03"
+  ledger_atoms: ["OMD-M-16"]
+  tags: ["BRIDGE", "G1", "G6", "G7", "LAB"]
+  claim_limit: "method/spec evidence only"

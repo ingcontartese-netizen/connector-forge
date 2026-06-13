@@ -1,0 +1,215 @@
+{
+  "server_name": "connector-name",
+  "version": "0.1.0",
+  "output_policy": {
+    "default_page_size": 25,
+    "acceptance_probe_page_size": 3,
+    "large_output_must_use": [
+      "page_size_or_limit",
+      "fields_projection",
+      "cursor_or_has_more",
+      "summary_or_artifact_path"
+    ]
+  },
+  "parity_policy": {
+    "status": "design_target_until_tested",
+    "cli_twin_required": false,
+    "side_effect_class_must_match": true,
+    "readback_contract_required_for_writes": true
+  },
+  "evidence_provenance": {
+    "source_bench": "ValuAziende OneMaster Draft, 2026-06-03",
+    "ledger_atoms": [
+      "OMD-M-15",
+      "OMD-M-16",
+      "OMD-M-25"
+    ],
+    "tags": [
+      "BRIDGE",
+      "G1",
+      "G6",
+      "G7",
+      "LAB"
+    ],
+    "claim_limit": "method/spec evidence only"
+  },
+  "legend": {
+    "risk_classes": [
+      "read",
+      "safe",
+      "write-safe",
+      "write-governed",
+      "write",
+      "write-destructive",
+      "open-world"
+    ],
+    "availability_states": [
+      "documented",
+      "in_static_schema",
+      "installed_local",
+      "live_available",
+      "host_exposed",
+      "dry_run_proven",
+      "apply_proven",
+      "blocked"
+    ],
+    "native_proxy_classes": [
+      "native_verified",
+      "native_hypothesis",
+      "visual_proxy",
+      "metadata_only",
+      "unsafe_generic",
+      "forbidden_proxy_for_native_request"
+    ]
+  },
+  "tools": [
+    {
+      "name": "health",
+      "description": "Use this first to verify the connector process, live/mock mode, build stamp, and basic backend reachability without triggering a heavy operation.",
+      "risk": "read",
+      "availability_state": "host_exposed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": {
+        "type": "object",
+        "required": [
+          "ok",
+          "mode",
+          "version",
+          "build_stamp"
+        ],
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          },
+          "mode": {
+            "type": "string",
+            "enum": [
+              "live",
+              "mock",
+              "stub"
+            ]
+          },
+          "version": {
+            "type": "string"
+          },
+          "build_stamp": {
+            "type": "string"
+          },
+          "built_at": {
+            "type": "string"
+          },
+          "backend": {
+            "type": "object",
+            "description": "Redacted reachability summary only; no secrets or full URLs with credentials."
+          }
+        }
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "get_context",
+      "description": "Use this when you need the current app/project/document context before choosing an action.",
+      "risk": "read",
+      "availability_state": "host_exposed",
+      "inputSchema": {
+        "type": "object",
+        "properties": {}
+      },
+      "outputSchema": {
+        "type": "object",
+        "properties": {
+          "ok": {
+            "type": "boolean"
+          }
+        }
+      },
+      "annotations": {
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    },
+    {
+      "name": "propose_change",
+      "description": "Use this when a governed domain change must be staged for human approval instead of written directly.",
+      "risk": "write-governed",
+      "availability_state": "host_exposed",
+      "native_proxy_class": "native_hypothesis",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "payload": {
+            "type": "object"
+          },
+          "idempotency_key": {
+            "type": "string"
+          },
+          "dry_run": {
+            "type": "boolean",
+            "default": true
+          }
+        },
+        "required": [
+          "payload",
+          "idempotency_key"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "openWorldHint": false
+      },
+      "requiresApproval": true,
+      "audit": {
+        "required": true,
+        "fields": [
+          "request_id",
+          "operator_id",
+          "proposal_id",
+          "object_ids",
+          "outcome"
+        ]
+      }
+    },
+    {
+      "name": "export_preview",
+      "description": "Use this when you need a verifiable preview artifact before a write or publication step.",
+      "risk": "safe",
+      "availability_state": "host_exposed",
+      "native_proxy_class": "visual_proxy",
+      "inputSchema": {
+        "type": "object",
+        "properties": {
+          "target_id": {
+            "type": "string"
+          },
+          "format": {
+            "type": "string",
+            "enum": [
+              "pdf",
+              "png",
+              "markdown",
+              "json"
+            ]
+          }
+        },
+        "required": [
+          "target_id",
+          "format"
+        ]
+      },
+      "annotations": {
+        "readOnlyHint": false,
+        "destructiveHint": false,
+        "openWorldHint": false
+      }
+    }
+  ]
+}
