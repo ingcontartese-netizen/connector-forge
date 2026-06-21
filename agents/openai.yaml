@@ -1,4 +1,4 @@
 interface:
   display_name: "Connector Forge"
-  short_description: "Build verified CLI, MCP, and hybrid connectors"
-  default_prompt: "Use $connector-forge to design a verified connector for this app."
+  short_description: "Build verified agent connectors and bridges"
+  default_prompt: "Use $connector-forge to design a verified connector or bridge for this app."

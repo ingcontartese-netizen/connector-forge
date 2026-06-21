@@ -23,6 +23,24 @@ Prose can be localized, but machine values stay in canonical English.
 | Host Pack | Host-specific install/use artifacts. |
 | Claim Audit | Check against absolute or unproven promises. |
 
+## MCP Merged Terms
+
+These terms are folded from the former MCP specialist package so Forge does not need a second glossary.
+
+| Term | Canonical meaning |
+|---|---|
+| MCP server | Server process or endpoint that exposes selected connector operations through MCP. It is not the whole connector. |
+| MCP tool catalog | Public contract of MCP tools, schemas, risk hints, auth expectations, and bounded output rules. |
+| Local-first connector | Connector designed around a local trust boundary, usually `stdio`, local secrets, and workstation-local app/file access. |
+| Remote-first connector | Connector designed around host-reachable HTTPS, remote auth, audit, and shared reachability. |
+| Site bridge | Local bridge near a desktop/private app that lets a remote broker reach authorized app operations without exposing the app directly. |
+| Discovery | Host/server capability check before action: initialize/discover, tools list, resources list when relevant, and schema inspection. |
+| State introspection | Read-only tools that expose active document, selection, context, lock state, health, version, or workspace. |
+| Sprint 1 readiness | Minimum verifiable readiness for the first implementation sprint: success criteria, packaging deliverables, rollback/recovery owner, and sample data/file with expected output. |
+| Acceptance evidence | Concrete proof such as transcript, screenshot, log, lifecycle event, exported artifact, host smoke, or readback. |
+| Inspector proof | Harness-level MCP proof for handshake, discovery, schema, error model, auth, write safety, and recovery. It does not replace host smoke. |
+| Remote broker | Remote MCP-facing service reachable by cloud hosts. It may coordinate auth, audit, policy, and a local bridge. |
+
 ## Capability/Operation States
 
 - `verified`: proven by primary source, code, authorized probe, transcript, fixture, or repeatable test.

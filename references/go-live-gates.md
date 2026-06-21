@@ -40,6 +40,22 @@ Release decision states:
 | G13 | Write intent proof | write path has intent contract, command availability, sandbox/approval, dry-run, apply, readback, expected-vs-actual intent proof, and rollback scope | technical success without intent proof; proxy passed as native; position/relationship/protected-field mismatch; rollback unknown | `INTENT_CONTRACT.md`, dry-run/apply transcript, readback, intent comparison, rollback scope |
 | G14 | Cold-start acceptance | before `deployment-ready`/GitHub-ready claims, the skill guides an app not pre-studied from Gate 0 to first verified read and governed write/dry-run/readback/rollback when in scope | only known-case success; tool chosen from memory instead of method; no case-study evidence | `case-studies/COLD_START_*.md` with source registry, surface map, capability ledger, live proof, recovery |
 
+## MCP Go-Live Delta
+
+For MCP connectors, use `mcp-inspector-lab.md` before host smoke. Inspector or an equivalent harness can support `source_validated`, but it does not prove `host_loaded` or `host_live_validated`.
+
+MCP host go-live needs:
+
+- server starts and exposes a stable tool catalog;
+- Inspector or host-equivalent harness proves handshake, discovery, schema, bounded output, correctable error, auth path when relevant, write safety when relevant, and recovery;
+- the real host loads the fresh server/package/catalog with build stamp or equivalent freshness proof;
+- at least one real host read succeeds;
+- remote-first lanes prove reachability, auth/re-auth, broker/bridge split, audit, and recovery;
+- each claimed carrier has its own G1-G6 evidence and carrier state in `carrier-parity-matrix.md`;
+- package evidence passes `package-integrity.md`.
+
+Config presence plus Inspector success is not go-live. For multi-host programs, promote one lane at a time or use an explicit release-candidate marker until every intended lane has evidence.
+
 ## Rules
 
 - Config presence is not readiness.

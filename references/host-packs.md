@@ -4,6 +4,19 @@ Use host packs after the adapter and branch are chosen.
 
 Before writing host-specific files, update `host-capability-matrix.md`.
 
+## MCP Host-Pack Merge Delta
+
+For MCP connectors, a host pack is a thin projection over shared connector logic. It must not carry divergent domain behavior, private tool names, or host-only business rules that are absent from the adapter and public tool contract.
+
+Before writing a host pack:
+
+- choose the primary Sprint 1 host in `mcp-procedure-track.md`;
+- use `mcp-artifact-matrix.md` to identify required host artifacts;
+- use `carrier-parity-matrix.md` to record the carrier state and evidence layer;
+- use `mcp-remote-first-baseline.md` when the host reaches a remote endpoint or broker.
+
+A config snippet is not a host pack. Minimum host-pack evidence includes runtime entrypoint, env/auth instructions, launch or registration path, tool filtering/permissions, reload or refresh steps, one host smoke, and recovery notes. If source changed but a carrier package was not rebuilt and smoke-tested, record package lag instead of implying parity.
+
 ## Codex
 
 Artifacts:

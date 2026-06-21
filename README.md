@@ -39,6 +39,10 @@ entry point that funnels into a library of focused `references/` and reusable
 Gemini CLI, and Antigravity. Drop it next to your agent and it knows how to walk up
 to an unfamiliar system and build a trustworthy bridge to it.
 
+**Current public source:** OneMaster V1 (2026-06-21). MCP procedure is now
+self-contained inside Connector Forge; no separate MCP specialist skill is required
+for ordinary MCP design.
+
 > **The superpower:** point your agent at *any* app and have it forge a connector
 > that is verified, governed, and honest -- instead of one that hallucinates an
 > endpoint and corrupts your data.
@@ -90,7 +94,7 @@ the host packs let that one brain travel across hosts without drift.
 | Path | What |
 |---|---|
 | `SKILL.md` | Entry point and operating funnel. |
-| `references/` | 58 focused method references, one concern each. |
+| `references/` | 78 focused method references, one concern each. |
 | `assets/templates/` | Reusable per-connector artifacts (Gate 0 dossier, surface map, capability ledger, ...). |
 | `assets/case-studies/` | Sanitized field cases (ValuAziende, Archicad, Primavera P6). |
 | `assets/host_packs/` | Per-host adapters (Claude Code, Cowork, Codex, Gemini CLI, Antigravity). |

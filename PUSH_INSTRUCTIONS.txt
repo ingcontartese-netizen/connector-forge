@@ -1,32 +1,43 @@
-connector-forge — push to GitHub (run by Giuseppe, credentials stay with you)
-============================================================================
+connector-forge - OneMaster V1 GitHub push notes
+================================================
 
-Repo (already created, public): https://github.com/ingcontartese-netizen/connector-forge
+Repo: https://github.com/ingcontartese-netizen/connector-forge
+Branch: main
+Release lane: OneMaster V1 working source, 2026-06-21
 
-STEP 1 — open Git Bash (or Windows Terminal) and paste:
+This repository is already initialized and connected to GitHub. Do not run
+`git init`, do not replace the remote, and do not force-push.
 
-  cd "/c/Users/conta/Documents/Per skill CLI/REAL_CASES/VALUAZIENDE_CONNECTOR_FORGE_LAB/connector-forge-pub"
-  git init
+Recommended push flow:
+
+  cd "C:\Users\conta\Documents\For Skill Connector-Forge OneMaste V1\_work_codex\github_staging_connector_forge_onemaster_v1_20260621_134804"
+  git status
   git add -A
-  git commit -m "connector-forge: initial public release"
-  git branch -M main
-  git remote add origin https://github.com/ingcontartese-netizen/connector-forge.git
-  git push -u origin main
+  git commit -m "OneMaster V1: internalize MCP in connector-forge"
+  git push origin main
 
-  (If using Windows CMD instead of Git Bash, replace the first line with:
-   cd "C:\Users\conta\Documents\Per skill CLI\REAL_CASES\VALUAZIENDE_CONNECTOR_FORGE_LAB\connector-forge-pub" )
+If Git asks for identity, set it locally or globally with the GitHub identity
+you want to publish under. Do not store personal access tokens or passwords in
+this repository.
 
-STEP 2 — when git asks to authenticate, YOU enter it (browser sign-in or a
-Personal Access Token). Claude never handles your credentials.
+Expected post-push checks:
 
-If git complains about identity, set it once:
-  git config --global user.name  "Giuseppe"
-  git config --global user.email "your-github-email@example.com"
+- `references/` has 78 focused method references.
+- The seven MCP core files are present:
+  - references/mcp-procedure-track.md
+  - references/mcp-artifact-matrix.md
+  - references/mcp-inspector-lab.md
+  - references/mcp-remote-first-baseline.md
+  - references/carrier-parity-matrix.md
+  - references/mcp-2026-07-28-watchlist.md
+  - references/mcp-field-lessons.md
+- The retired external MCP specialist skill-name literal has zero matches in the
+  public working tree.
+- LICENSE and NOTICE remain Apache-2.0 provenance files.
+- `proposed-references/` remains draft material and is not counted as integrated.
 
-After the push, refresh https://github.com/ingcontartese-netizen/connector-forge
-— the README hero, badges, and all 137 files should be there.
+Claim boundary:
 
-Notes:
-- Everything is already audited (no secrets, no proprietary method, no user data).
-- 137 files: SKILL.md + 58 references + templates + host packs + agents + scripts
-  + README/LICENSE/NOTICE/.gitignore + proposed-references/ (13 DRAFT + README).
+This push publishes the OneMaster V1 working source. It does not claim
+production readiness, deployed bridge status, full carrier parity, host-live
+execution, or MCP v2 compliance.

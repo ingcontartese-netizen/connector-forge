@@ -1,13 +1,13 @@
 ---
 name: connector-forge
-description: Build verified agent connectors and bridges for real apps, SaaS, APIs, desktop tools, CLIs, internal systems, and workflows. Use when Codex is asked to connect an AI agent to an app, create a CLI agent-native control plane, design or implement an MCP connector/server/broker, choose between CLI/MCP/API/plugin/file/browser automation, create a hybrid local bridge plus remote broker, package a connector for Codex/Claude/Cowork/ChatGPT Apps/Antigravity/Gemini, or audit connector readiness, security, drift, and acceptance tests.
+description: Build verified agent connectors and bridges for real apps, SaaS, APIs, desktop tools, CLIs, MCP hosts, internal systems, and workflows. Use when the user asks to connect an AI agent to an app, create a CLI or MCP control plane, design or implement an MCP connector/server/broker, choose between CLI/MCP/API/plugin/file/browser automation, create a hybrid local bridge plus remote broker, package for Codex/Claude/Cowork/ChatGPT Apps/Antigravity/Gemini, or audit readiness, security, drift, carrier parity, and acceptance evidence.
 ---
 
 # Connector Forge
 
-Version: OneMaster Draft (Codex active lane, 2026-06-03)
+Version: Forge OneMaster V1 Public Working Source (MCP self-contained track; package parity still gated, 2026-06-21)
 
-Status note: OneMaster Draft promotes method/spec lessons from the ValuAziende API-native bench into the Codex active lane. This is not OneMaster Ready, Deployed, package-ready, public/GitHub-ready, or Cowork parity evidence. Cowork pack parity, package/install/reload evidence, no-secret audit, ValuAziende Bridge V2 acceptance, CLI/MCP parity, and governed write smoke remain separate gates.
+Status note: Forge OneMaster V1 is the public GitHub working source for Connector Forge with MCP procedure routed through internal Forge references. Public-source evidence includes no-secret audit, sanitized case studies, Apache-2.0 license/NOTICE, README/changelog reconciliation, install/test evidence, and Giuseppe sign-off on 2026-06-21. This is not production-ready, package-ready, host-live, carrier-parity, deployed-endpoint, or MCP v2 compliance evidence.
 
 Use this skill to turn a real app into a verified connector. Start from evidence, not from a preferred protocol.
 
@@ -65,6 +65,19 @@ Output rule: read/search/simulate/report operations that can return large payloa
 
 Load only the reference files needed for the case:
 
+- Read `references/purpose-canon-and-source-authority.md` at Gate 0/0.0, before any contract, to fix scope in operator language, rank source authority, classify assets by recoverability, and ask if an author method-for-AI exists.
+- Read `references/surface-census-atlas-natural-questions.md` before promoting any operation, to map every divergent surface, prove the live build with doctor parity, and generate/replay the command atlas.
+- Read `references/write-ladder-red-max.md` before exposing any write, to size GREEN/YELLOW/RED tiers, require RED-max fresh confirmation, apply the absurdity test, and enforce hold-first error precedence.
+- Read `references/apply-classifier-envelope-readback.md` when wiring any apply, to classify the real outcome, never hide an app error in `ok:true`, echo effective params, and size readback to risk.
+- Read `references/schema-allowlist-row-identity-rule-binding.md` before exposing writable fields, to keep the schema no wider than the app, require row identity, and bind every rule to a capability.
+- Read `references/backup-restore-delta.md` before any destructive verb or reset, to back up before destroy, abort on irreplaceable assets, rehearse restore, and replay the post-backup delta.
+- Read `references/artifact-manifest-and-import-corridors.md` when exporting/importing real files or running a provider feed, to manifest every artifact and parse deterministically before any AI.
+- Read `references/text-comment-semantic-freshness.md` when reading/writing long decisional text or classifying it, to use edit-grade reads, prove edits by byte diff, test negated tokens, and signal stale judgments.
+- Read `references/transport-json-windows-cloudsync.md` when running on Windows or a cloud-synced store, for PowerShell carriers, mojibake-by-byte-structure, numeric typing, and authoritative-surface rules.
+- Read `references/dynamic-ai-registry-cost-guard.md` when the connector calls an AI model, to discover models dynamically, guard cost before expensive calls, and never leak a secret.
+- Read `references/multi-agent-worksite-and-charter.md` when more than one agent works the connector, for the worksite scaffold, post-restart reconciliation, content-blind routing, and conditional charters.
+- Read `references/operator-visual-acceptance-ux.md` when the connector touches a UI the operator reads, for operator-assisted probes, dense-UI discipline, perceived performance, and no raw enums on screen.
+- Read `references/release-claim-canaries-closure.md` before declaring any slice ready, for canary invariants, greppable closure labels, the imputation ladder, and the dual-mandate promotion gate.
 - Read `references/decision-engine.md` when choosing the path.
 - Read `references/domain-comprehension.md` and use `assets/templates/DOMAIN_MODEL.md` before Gate 0 when the app has a non-trivial domain.
 - Read `references/domain-semantic-validation.md` before promoting count/list/detail/natural-language answers based on technical records, UI labels, reports, DB rows, or endpoint data.
@@ -80,7 +93,7 @@ Load only the reference files needed for the case:
 - Read `references/glossary-states.md` when terms or states risk drifting across adapter/capability/operation/tool/bridge/broker/wrapper.
 - Read `references/adapter-contract.md` for every connector.
 - Read `references/cli-branch.md` when the best control plane is local, terminal-based, batchable, repo-based, FastAPI/OpenAPI-backed, or a desktop bridge.
-- Read `references/mcp-branch.md` when the connector must expose tools to MCP hosts, remote teams, ChatGPT Apps, Claude/Cowork, Antigravity, Gemini, or other clients.
+- Read `references/mcp-branch.md` when the connector must expose tools to MCP hosts, remote teams, ChatGPT Apps, Claude/Cowork, Antigravity, Gemini, or other clients. Follow its internal reference map for procedure, artifacts, Inspector evidence, remote-first baseline, carrier parity, package gates, and protocol watchlist.
 - Read `references/hybrid-branch.md` when a local app or desktop system needs a local bridge plus a remote broker, or when CLI should be built first and wrapped as MCP later.
 - Read `references/security-mesh.md` for any auth, secrets, private data, write tool, remote broker, or shell execution.
 - Read `references/write-intent-proof.md` and use `assets/templates/INTENT_CONTRACT.md` before any state-changing, native-object, governed, visual, geometric, relational, or persistent write.
@@ -158,7 +171,33 @@ Before editing scripts, read the relevant branch reference. Before running scrip
 
 Use `assets/templates/` as copyable project artifacts. Use `assets/reference_implementations/` for minimal working shapes. Use `assets/host_packs/` for host-specific instruction patterns. Use `assets/case-studies/` as sanitized field evidence, not as a substitute for live Gate 0 on a new app.
 
-For MCP-specific depth, use the installed `mcp-connector-builder` skill as the specialist library instead of duplicating it here.
+For deeper MCP work, use `references/mcp-branch.md` as the hub and follow its internal map, especially `mcp-procedure-track.md`, `mcp-artifact-matrix.md`, `mcp-inspector-lab.md`, `mcp-remote-first-baseline.md`, `carrier-parity-matrix.md`, `mcp-field-lessons.md`, and `mcp-2026-07-28-watchlist.md`.
+
+## FOG-SKILLUP Local Delivered 2026-06-13
+
+Promoted into the local Codex active lane after the ValuAziende OneMaster Bridge V2 cantiere, cross-review by Codex and Claude, and operator sign-off on the generalist intent. This pack is connector-generalist: ValuAziende, Archicad 29, and Primavera P6 are case-study evidence, not boundaries.
+
+Promoted into active references:
+
+- Purpose canon and source authority separation: operator intent and live/source capability are different authorities.
+- Surface census, doctor parity, command atlas, UI field map, and natural-question replay.
+- GREEN/YELLOW/RED write ladder with no blind writes: GREEN avoids pre-confirmation for low-risk operator-commanded work but still requires readback; RED-max requires fresh confirmation after the concrete proposal exists.
+- Apply outcome classifier, honest envelope, effective parameter echo, and risk-proportional readback.
+- Schema no wider than the app, row identity, allowlists, and rule-to-capability binding.
+- Backup/restore/delta discipline for destructive verbs, resets, imports, and recovery.
+- Artifact manifests and deterministic import corridors before AI-assisted interpretation.
+- Long decisional text safety: full-note reads, byte-level diff, semantic freshness, smart filters, and negation tests.
+- Windows, UTF-8, PowerShell carrier, JSON, cloud-sync, and authoritative-surface rules.
+- Dynamic AI model registry, settings applicability, cost guard, and secret-safe model discovery.
+- Multi-agent worksite, shared relay, per-agent brain, conditional Antigravity charter, and no-bypass policy.
+- Operator visual acceptance and dense-UI probe discipline.
+- Release closure with canaries, claim limits, imputation ladder, and public-release blockers.
+
+Current claim limits:
+
+- `installed-local-codex`: the reference pack is present in the local skill lane.
+- `not-claimed`: public/GitHub-ready, production-ready, package-ready, Cowork/Claude carrier parity, Antigravity carrier parity, and external publication.
+- Public release remains blocked until no-secret audit, sanitized examples, license/readme/release notes, package/install/reload evidence, and Giuseppe sign-off are complete.
 
 ## OneMaster Draft Codex Active Lane
 

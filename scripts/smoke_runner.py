@@ -5,6 +5,7 @@ Esegue comandi read-only e registra output. Non esegue write.
 Esempi:
   python smoke_runner.py "python app_cli.py"
   python smoke_runner.py shop-agent --test "doctor --format json" --test "auth status" --timeout 20
+  python smoke_runner.py "\"C:\\Program Files\\Python314\\python.exe\" \"C:\\My Project\\app_cli.py\"" --test "--help"
 """
 import argparse, subprocess, json, time, shlex
 from pathlib import Path
@@ -25,7 +26,7 @@ def run(base, test, timeout):
 
 if __name__ == "__main__":
     ap = argparse.ArgumentParser()
-    ap.add_argument("tool", help="comando base, anche multi-parte tra virgolette (es. 'python app_cli.py')")
+    ap.add_argument("tool", help="comando base, anche multi-parte tra virgolette; quota path con spazi su Windows")
     ap.add_argument("--test", action="append", default=None, help="sottocomando ripetibile (read-only)")
     ap.add_argument("--timeout", type=int, default=30)
     ap.add_argument("--output", default=None, help="scrivi risultati JSON su file")

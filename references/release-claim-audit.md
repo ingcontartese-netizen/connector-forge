@@ -60,7 +60,7 @@ Before any `v3 field-tested` or `public/GitHub-ready` claim, the same R3 content
 - generated package;
 - installed copy.
 
-The `ZERO_DRIFT_MATRIX.md` must show parity for the claimed carriers (same file set, same versions, except declared host-specific packaging differences). Any undeclared divergence blocks the claim. Lesson counts must be machine-counted from the source ledger at release time, never hand-carried (the 83-vs-82 episode).
+Produce a `ZERO_DRIFT_MATRIX.md` for the claimed carriers. It must show parity for the claimed carriers (same file set, same versions, except declared host-specific packaging differences). Any undeclared divergence blocks the claim. Lesson counts must be machine-counted from the source ledger at release time, never hand-carried (the 83-vs-82 episode).
 
 ## 6. Release Gate Checklist (R3-S10)
 

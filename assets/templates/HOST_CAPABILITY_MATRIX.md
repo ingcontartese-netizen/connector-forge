@@ -11,7 +11,7 @@ Primary host for Sprint 1:
 | Cowork / remote | yes/no | Streamable HTTP |  |  |  |  |  |  |
 | ChatGPT Apps | yes/no | HTTPS `/mcp` |  |  |  |  |  |  |
 | Gemini CLI | yes/no | stdio / Streamable HTTP |  |  |  |  |  |  |
-| Antigravity | research/live-verify | stdio / serverUrl |  |  |  |  |  |  |
+| Antigravity | research_live_verify | stdio / serverUrl |  |  |  |  |  |  |
 
 ## Decision
 

@@ -2,6 +2,8 @@
 
 Use this reference before packaging a connector for a real AI host. MCP support is not uniform across hosts; verify transport, auth, tool filtering, output limits, and refresh behavior in the target host.
 
+Host MCP transport, auth, refresh, and tool-control assumptions carry `[spec 2025-11-25 - revalidate]` when they depend on current protocol or host behavior.
+
 | Host | Local stdio | Remote HTTP `/mcp` | Auth baseline | Tool controls | Evidence required |
 |---|---|---|---|---|---|
 | Codex | yes, via MCP config | yes, when configured | local env/keychain for stdio; OAuth for remote where supported | `enabled_tools` / disabled tools, approvals, timeouts | config loaded, discovery visible, one read smoke |
@@ -9,7 +11,21 @@ Use this reference before packaging a connector for a real AI host. MCP support 
 | Claude Cowork / remote | no direct desktop local assumption | yes, cloud reaches public/reachable connector | remote connector auth; bridge required for local desktop apps | plugin/connector permissions, sub-agent verifier | reachable server, bridge live, host smoke |
 | ChatGPT Apps | no | yes, public HTTPS | app auth / OAuth as supported by Apps SDK | tool descriptors, `_meta`, write confirmation, widget state | Developer Mode/API Playground test, client UX check |
 | Gemini CLI | yes | yes | env/ADC/service account/OAuth as documented | `includeTools`, `excludeTools`, `trust`, name sanitization | settings loaded, name mapping, smoke |
-| Antigravity | to live-verify | `serverUrl` documented but host behavior must be verified | ADC/OAuth/custom headers where documented | permission rules such as `mcp(server/tool)` | `research/live-verify` until tested |
+| Antigravity | to live-verify | `serverUrl` documented but host behavior must be verified | ADC/OAuth/custom headers where documented | permission rules such as `mcp(server/tool)` | `research_live_verify` until tested |
+
+## MCP Matrix Role
+
+This matrix screens host capability. It is not package parity evidence and does not prove that a host pack is installed, loaded, or live.
+
+For MCP connectors:
+
+- use `mcp-procedure-track.md` to choose local-first, remote-first, or hybrid mode;
+- use `mcp-artifact-matrix.md` for host-specific artifact requirements;
+- use `carrier-parity-matrix.md` for source/package/installed/host-loaded/host-live states;
+- use `mcp-remote-first-baseline.md` for remote endpoint, broker, auth, and bridge assumptions;
+- put fast-moving host behavior in `revalidation-matrix.md` before release.
+
+Do not promote a lane beyond its real evidence. A documented config shape, store entry, or tool catalog is not the same as host smoke.
 
 ## Rules
 

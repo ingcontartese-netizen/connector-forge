@@ -35,6 +35,25 @@ Check for:
 
 Map the review to OWASP MCP Top 10 style categories when MCP is in scope: token/secret exposure, supply chain, authN/Z gaps, tool poisoning, command injection, context over-sharing, shadow servers, audit gaps, and unsafe downstream actions.
 
+## MCP Security Merge Delta
+
+MCP is an exposure layer, not the trust boundary. The app authority remains the official app surface and the domain adapter.
+
+For every MCP tool, record:
+
+- risk class and data class;
+- auth owner, scopes, and secret location;
+- bounded output controls;
+- approval path for governed writes;
+- audit fields: request ID, user/operator, tenant/workstation when relevant, tool, object IDs, outcome;
+- recovery/readback path.
+
+Remote MCP must use server-side auth, policy, and audit. Do not pass target-app tokens through the client. For desktop apps behind a remote host, split broker and local bridge explicitly, and keep secrets out of broker logs, lifecycle logs, screenshots, fixtures, and shipped packages.
+
+Tool catalog text is also a security surface. Descriptions must be concrete, non-promotional, claim-audited, and must not hide broad dispatch, raw shell, unrestricted query, or open-world behavior behind friendly wording.
+
+When MCP auth, transport, SDK, host catalog, remote broker, or future protocol behavior is in scope, link the review to `mcp-procedure-track.md`, `mcp-remote-first-baseline.md`, `mcp-inspector-lab.md`, and `mcp-2026-07-28-watchlist.md`.
+
 ## CLI-Specific Risks
 
 Check for:

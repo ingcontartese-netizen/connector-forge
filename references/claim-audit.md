@@ -24,8 +24,31 @@ Prefer:
 - "uses evidence-backed capabilities";
 - "supports read-only readiness before writes";
 - "requires revalidation for fast-moving hosts/protocols";
-- "MCP branch uses `mcp-connector-builder` as specialist library";
+- "MCP branch is self-contained for ordinary MCP design through internal Forge references";
 - "Hybrid branch handles local bridge plus remote broker when justified".
+
+## OneMaster V1 MCP Claim Boundary
+
+Allowed claim:
+
+- "Connector Forge OneMaster V1 working source includes an internal MCP procedure for ordinary connector design, packaging governance, and revalidation."
+- "Connector Forge OneMaster V1 is published as a public GitHub working source after no-secret audit, sanitized case studies, Apache-2.0 license/NOTICE, README/changelog reconciliation, install/test evidence, and Giuseppe sign-off."
+
+Required qualifiers:
+
+- self-contained means method/procedure/reference self-containment, not a live server, host package, deployed endpoint, or production connector;
+- carrier parity requires package rebuild/import/install/reload proof and host smoke for each claimed carrier;
+- future MCP protocol material stays in watchlist/quarantine until final specification, SDK support, and host behavior are revalidated;
+- the former MCP specialist material is historical source material only, not an operational dependency.
+
+Not claimed:
+
+- production-ready;
+- package-ready;
+- host-live parity;
+- deployed MCP endpoint;
+- all-host support;
+- MCP 2026-07-28 compliance.
 
 ## Audit Questions
 

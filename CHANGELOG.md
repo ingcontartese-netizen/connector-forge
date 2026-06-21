@@ -1,5 +1,35 @@
 # Changelog - connector-forge
 
+## OneMaster V1 public working source - 2026-06-21
+
+Integrated the MCP procedure into Connector Forge as an internal, self-contained method path for ordinary MCP connector design. This is the public GitHub working-source release, not a production/package/carrier-parity/host-live claim.
+
+Added:
+
+- MCP internal hub and procedure references for branch choice, Gate 0 to Sprint 1 flow, artifact matrix, Inspector checks, remote-first baseline, field lessons, carrier parity, and future protocol watchlist.
+- Carrier parity governance with explicit source/package/installed/host-loaded/host-live layers and canonical carrier states.
+- MCP 2026-07-28 watchlist with `[spec 2025-11-25 - revalidate]` markers and core-first / carrier-after upgrade rule.
+- Merge deltas into security, host packs, host capability, package integrity, revalidation, and go-live gates.
+
+Updated:
+
+- `SKILL.md` now routes MCP work through internal Forge references instead of an external specialist dependency.
+- `mcp-branch.md` is the self-contained MCP hub and uses `mcp-procedure-track.md` as the source of truth for detailed procedure.
+- `claim-audit.md` scopes the self-contained MCP claim and keeps production, package, carrier parity, host-live, and future protocol claims gated.
+- `SHA256SUMS_ONEMASTER_V1.txt` is regenerated outside the skill folder for the current OneMaster V1 working source; delivered/source manifests remain historical evidence.
+
+Deferred:
+
+- script/scaffold wave, including repository skeleton material;
+- carrier package rebuild/import/install/reload smoke;
+- MCP 2026-07-28 final-spec adoption until the final specification, SDKs, and host behavior are revalidated.
+
+Claim limits:
+
+- Earned: Connector Forge working source contains an internal MCP design method and no longer requires an external MCP specialist skill for ordinary MCP procedure.
+- Earned: public GitHub working-source publication after no-secret audit, sanitized case studies, Apache-2.0 license/NOTICE, README/changelog reconciliation, install/test evidence, and Giuseppe sign-off.
+- Not claimed: production-ready, package-ready, carrier parity, host-live parity, deployed endpoint, live connector, or MCP 2026-07-28 compliance.
+
 ## OneMaster Draft - Codex active lane - 2026-06-03
 
 Promoted method/spec lessons from the ValuAziende learning bench, legacy bridge study, and MCP+CLI guide study into the Codex active skill lane.
